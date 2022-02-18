@@ -1,0 +1,53 @@
+
+
+<mat-card-content>
+
+    <div fxLayoutAlign="center center"    >
+        <img class="logo" src="./assets/img/logo-freddyrada.jpg"/>
+    </div>
+    
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div"  >
+    
+    
+       
+       
+        <mat-card fxFlex="40" class="mat-elevation-z8"   >
+    <mat-toolbar color="primary"  >Login User</mat-toolbar>
+            <form fxLayoutAlign="stretch"  
+            fxLayout="column"  
+            class="login-form"
+            [formGroup]="formLogin"
+           >
+    
+                <mat-form-field  >
+                    <input matInput   
+                    placeholder="Email"
+                    formControlName="email" >
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <input matInput   
+                    placeholder="Password"
+                    formControlName="password">
+                </mat-form-field>
+    
+            </form>
+    
+      
+    
+            <button mat-raised-button color="primary"   (click)="Login()" fxFlexFill type="submit">Login</button>
+    
+            
+            <br>
+            <br>
+       
+          
+                <a routerLink="/register" ><p fxLayoutAlign="center center" style="color: darkslateblue;" class="pointer " >Registrar</p></a>
+            
+        </mat-card>
+       
+    </div>
+    
+</mat-card-content>
+
+ 

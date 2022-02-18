@@ -1,0 +1,38 @@
+.main-div mat-card{
+    padding: 0px;
+}
+
+.login-form{
+    padding: 20px;
+}
+.text p{
+    text-align: center;
+
+}
+
+.btnregister{
+    margin-left: 270px;
+}
+
+.danger{
+    color: red;
+}
+
+.logo{
+    max-width: 180px;
+    max-height: 180px;
+   
+ 
+  
+    z-index: -100; 
+   
+}
+
+mart-card{
+    max-width: 600px;
+    max-height: 600px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+

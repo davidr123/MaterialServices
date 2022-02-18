@@ -1,0 +1,67 @@
+
+
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+
+    <mat-card fxFlex="35" class="mat-elevation-z8"  class="login-form">
+      <mat-toolbar color="primary">  Registro de Usuarios </mat-toolbar>    
+
+      <form [formGroup]="FormRegister" 
+      fxLayout="column" 
+      fxLayoutAlign="stretch"
+     >
+        <mat-form-field>
+         
+            <input matInput  
+            type="text" 
+            placeholder="Nombre"
+            formControlName="nombre">
+
+        </mat-form-field>
+
+        <mat-form-field>
+         
+            <input matInput 
+            type="email" 
+            placeholder="Email"
+            formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field>
+         
+            <input matInput 
+            type="password" 
+            placeholder="Password"
+            formControlName="password">
+        </mat-form-field>
+
+        <mat-form-field>
+         
+            <input matInput 
+            type="password" 
+            placeholder="Confirm Password"
+            formControlName="password2">
+        </mat-form-field>
+
+    </form>
+
+    <div  fxLayoutAlign="rigth rigth" >
+            <div class="danger" fxLayout="column" >
+                <p *ngIf="CampoNoValido('nombre')">El campo nombre es invalido</p>
+                <p *ngIf="CampoNoValido('email')">El campo email es invalido</p>
+                <p *ngIf="ContrsenasIguales()">Los campos de Password no son iguales</p>
+               
+            </div>
+      
+       
+            
+    </div>
+   
+<button mat-raised-button color="primary" type="submit"  (click)="CrearUsuarios()" fxFlexFill >Registrar</button>
+
+
+
+  
+    </mat-card>
+
+
+</div>
