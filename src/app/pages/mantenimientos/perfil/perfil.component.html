@@ -1,0 +1,93 @@
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+<div fxLayoutAlign="center center" class="col-md-6">
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+
+        <mat-card fxFlex="35" class="mat-elevation-z4"  class="login-form">
+            <mat-card-header>
+                <mat-card-title>Mi Perfil de Usuario </mat-card-title>
+              </mat-card-header>
+    
+          <form 
+          fxLayout="column" 
+          fxLayoutAlign="stretch"
+          [formGroup]="formPerfil"
+          
+         >
+            <mat-form-field>
+             
+                <input matInput  
+                type="text" 
+                placeholder="Nombre"
+                formControlName="nombre"
+               >
+               <mat-icon matSuffix>account_circle</mat-icon>
+    
+            </mat-form-field>
+    
+            <mat-form-field>
+             
+                <input matInput 
+                type="email" 
+                placeholder="Email"
+                formControlName="email"
+               >
+               <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+    
+    
+        </form>
+    
+       
+       
+    <button mat-raised-button color="primary" type="submit"  (click)="ActualizarUsuario()"   >Guardar Cambios</button>
+    
+    
+    
+      
+        </mat-card>
+    
+    
+    </div>
+    
+
+</div>
+
+
+
+<div fxLayoutAlign="center center" class="col-md-6">
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+
+        <mat-card fxFlex="35" class="mat-elevation-z8"  class="login-form">
+
+             <mat-card-header>
+                <mat-card-title>Perfil de Foto </mat-card-title>
+              </mat-card-header> 
+              <br>
+    
+       <div>
+           <input type="file">
+       </div>
+    
+       <br>
+       
+    <button mat-raised-button color="primary" type="submit" class="botones"   >Cargar Foto</button>
+    
+    
+    
+      
+        </mat-card>
+    
+    
+    </div>
+    
+
+</div>
+
+
+</div>
+

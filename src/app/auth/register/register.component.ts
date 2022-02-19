@@ -44,7 +44,7 @@ password2:['', Validators.required]
     this.usuarioService.crearusuario(this.FormRegister.value)
     .subscribe(resp=>{
       console.log(resp);
-      this.route.navigateByUrl('/menu');
+      this.route.navigateByUrl('menu');
     Swal.fire('Creado', 'El usuario a sido creado con éxito', 'success')
 
     })

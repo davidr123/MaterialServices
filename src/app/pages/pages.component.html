@@ -1,9 +1,9 @@
 
 
-<div class="admin-container" [class.admin-is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="primary" class="admin-toolbar mat-elevation-z5">
+<div fxFlexFill class="admin-container" [class.admin-is-mobile]="mobileQuery.matches">
+    <mat-toolbar   color="primary" class="admin-toolbar mat-elevation-z5">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-        <h1 class="admin-app-name">SISTEMA DE MEDICOS Y HOSPITALES</h1>
+        <h1  class="admin-app-name">SISTEMA DE MEDICOS Y HOSPITALES</h1>
         <button mat-icon-button matSuffix  >
           
             <span class="material-icons end iconlogout" (click)="Logout()">logout</span>
@@ -11,34 +11,28 @@
     </mat-toolbar>
 
     <mat-sidenav-container class="admin-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [class.mat-elevation-z5]="!mobileQuery.matches">
+        <mat-sidenav  class="mat-elevation-z8" #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [class.mat-elevation-z5]="!mobileQuery.matches">
             <mat-nav-list>
 
                 <br>
 
-                <a mat-list-item >
-               
-                                 
+                
 
-                               <img class="w60"/> 
-                             <div class="u-text">
+                             <div  fxLayoutAlign="center center"  fxLayout="column">
                                
-                             </div>
-                              </a>
+                                    <img  class="w60" [src]="usuario.imagenUrl"/>
+                                    <br>
+                                    {{usuario.email}}
+                                 
+                            </div>
+                           
+           
 
-                <div class="text-muted">
-               
-                 </div>
-
-                 <a mat-list-item routerLink="perfil" routerLinkActive="active-link" >
-                    <mat-icon mat-list-icon ></mat-icon>
-
-                    
-                    Perfil
-                </a>
                 <br>
                 <br>
                 
+<mat-divider ></mat-divider>
+<br>
 
 
                 <a mat-list-item   >
@@ -60,7 +54,7 @@
             <div class="content">
                
       
-
+<router-outlet></router-outlet>
    
 
             </div>

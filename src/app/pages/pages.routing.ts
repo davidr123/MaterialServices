@@ -3,21 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../guard/auth.guard';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PerfilComponent } from './mantenimientos/perfil/perfil.component';
 
 import { PagesComponent } from './pages.component';
 
 const routes:Routes=[
 
     
-  {path:'', 
-  component:PagesComponent,
+  {path:'dashboard', 
+   component:PagesComponent,
   canActivate:[AuthGuard],
   children: [
 
-    {path:'dashboard', component: DashboardComponent, data:{titulo:'Dashboard'}},
+    
 
     {path:'menu', component:PagesComponent},
-    {path:'', redirectTo:'/dashboard', pathMatch:'full'}
+    {path:'perfil', component:PerfilComponent},
+    {path:'', redirectTo:'/dashboard', pathMatch:'full'},
+   
+  
  
   ]
 

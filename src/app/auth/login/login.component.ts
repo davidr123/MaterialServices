@@ -46,7 +46,8 @@ if(this.formLogin.get(campo)?.invalid){
     this.usuarioService.loginusuario(this.formLogin.value)
     .subscribe(resp=>{
       console.log(resp)
-      this.route.navigateByUrl('menu');
+      this.route.navigateByUrl('/dashboard/menu');
+      console.log('entro ')
     }, err=>{
       console.log(err);
       Swal.fire('Error', 'Usuario Invalido', 'error');

@@ -5,6 +5,8 @@ import { RegisterInterface } from '../interfaces/register.interface';
 import {catchError, map, tap} from 'rxjs/operators';
 import { LoginInterface } from '../interfaces/login.interface';
 import { Observable, of } from 'rxjs';
+import { Usuario } from '../models/usuario.models';
+
 
 const base_url= environment.base_url;
 
@@ -12,6 +14,8 @@ const base_url= environment.base_url;
   providedIn: 'root'
 })
 export class UsuarioService {
+
+  public usuario!: Usuario
 
   get token(){
 
@@ -29,19 +33,35 @@ export class UsuarioService {
 
   }
 
+  get uid(){
+   return this.usuario.uid
+  }
+
+
   constructor(private http: HttpClient) { }
 
 validartoken(): Observable<boolean>{
   const url= `${base_url}/login/renew`;
 
-  return this.http.post(url, this.headers).
+  return this.http.get(url, this.headers).
   pipe(
-    tap((resp:any)=>{
+    map((resp:any)=>{
+
+      const {   
+         nombre,
+         email,
+         img,
+       
+         role,
+         uid,
+        }= resp.usuario
+
+      this.usuario = new Usuario( nombre, email, img, role,uid,);
+
       localStorage.setItem('token', resp.token);
+      return true;
     } ),
-    map(resp=> true),
-    
-    catchError(err=> of(false))
+      catchError(err=> of(false))
   );
   
 
@@ -80,6 +100,16 @@ validartoken(): Observable<boolean>{
   }
 
 
+  actualizarUsuario(data:{nombre:string, email: string, role:string}){
+    //http://localhost:3005/api/usuarios/61d23b1becb11e35555ad9db
+data={
+  ... data,
+  role:this.usuario.role || ''
+}
+  
+    const url=`${base_url}/usuarios/${this.uid}`;
+     return this.http.put(url, data, this.headers);
+  }
 
 
 }

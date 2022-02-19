@@ -16,6 +16,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages.component';
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { PerfilComponent } from './mantenimientos/perfil/perfil.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -23,6 +29,8 @@ import { PagesComponent } from './pages.component';
     PagesComponent,
 
    DashboardComponent,
+     UsuariosComponent,
+     PerfilComponent,
    
     
  
@@ -43,7 +51,12 @@ import { PagesComponent } from './pages.component';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
+
     
     
    

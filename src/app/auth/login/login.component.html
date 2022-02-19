@@ -1,16 +1,16 @@
 
-
+<br>
 <mat-card-content>
 
     <div fxLayoutAlign="center center"    >
         <img class="logo" src="./assets/img/logo-freddyrada.jpg"/>
     </div>
-    
+    <br>
+    <br>
+
+
     <div fxLayoutAlign="center center" fxFlexFill class="main-div"  >
-    
-    
-       
-       
+
         <mat-card fxFlex="40" class="mat-elevation-z8"   >
     <mat-toolbar color="primary"  >Login User</mat-toolbar>
             <form fxLayoutAlign="stretch"  
@@ -23,12 +23,15 @@
                     <input matInput   
                     placeholder="Email"
                     formControlName="email" >
+                    <mat-icon matSuffix>email</mat-icon>
                 </mat-form-field>
     
                 <mat-form-field>
                     <input matInput   
                     placeholder="Password"
                     formControlName="password">
+                    <mat-icon matSuffix> vpn_key</mat-icon>
+                    
                 </mat-form-field>
     
             </form>

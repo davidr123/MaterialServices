@@ -19,13 +19,13 @@
 }
 
 .logo{
-    max-width: 180px;
-    max-height: 180px;
+    max-width: 2000px;
+    max-height: 200px;
    
- 
-  
-    z-index: -100; 
-   
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
 }
 
 mart-card{
