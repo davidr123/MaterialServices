@@ -10,7 +10,7 @@ const base_url= environment.base_url;
   providedIn: 'root'
 })
 export class FileUploadService {
-
+ 
   public usuario!:Usuario;
 
   get token():string{
@@ -29,6 +29,7 @@ export class FileUploadService {
 
   }
 
+  
   get uid():string{
     return this.usuario.uid || '';
   }
@@ -38,16 +39,45 @@ export class FileUploadService {
   constructor(private http: HttpClient) { }
 
 
-  actualizarfoto(
-    id:string,
-    tipo:'usuarios'| 'medicos' | 'hospitales',
-    img:string
+  async actualizarfotoperfil(archivo: File, tipo:
+    'usuarios'|'medicos'|'hospitales', id:string
   ){
-   // http://localhost:3005/api/upload/hospitales/3cafb136-af9c-412b-b3a1-cfcabd78050d.jpg
 
- 
+
+try {
+  const url= `${base_url}/upload/${tipo}/${id}`
+  const formaData= new FormData();
+  formaData.append('imagen', archivo);
+
+  const resp= await fetch(url, {
+    method:'PUT',
+    headers:{
+      'x-token': localStorage.getItem('token') || ''
+    },
+   body:formaData
+  });
+
+const data= await resp.json();
+
+if(data.ok){
+  console.log(data)
+return data.nombreArchivo;
+}else{
+  console.log(data.msg);
+  return false
+}
+  
+} catch (error) {
+  console.log(error);
+  return false;
+}
+   
+     
+    
+  
+
+
   }
-
 
   
 

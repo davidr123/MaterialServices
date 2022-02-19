@@ -7,7 +7,7 @@
 <div fxLayoutAlign="center center" class="col-md-6">
     <div fxLayoutAlign="center center" fxFlexFill class="main-div">
 
-        <mat-card fxFlex="35" class="mat-elevation-z4"  class="login-form">
+        <mat-card fxFlex="75" class="mat-elevation-z4"  class="login-form">
             <mat-card-header>
                 <mat-card-title>Mi Perfil de Usuario </mat-card-title>
               </mat-card-header>
@@ -62,7 +62,7 @@
 <div fxLayoutAlign="center center" class="col-md-6">
     <div fxLayoutAlign="center center" fxFlexFill class="main-div">
 
-        <mat-card fxFlex="35" class="mat-elevation-z8"  class="login-form">
+        <mat-card fxFlex="100" class="mat-elevation-z8"  class="login-form">
 
              <mat-card-header>
                 <mat-card-title>Perfil de Foto </mat-card-title>
@@ -70,12 +70,20 @@
               <br>
     
        <div>
-           <input type="file">
+
+        <div class="text-center">
+            <img *ngIf="!imgTemp" [src]="usuario.imagenUrl"  class="w90"/>
+            <img *ngIf="imgTemp" [src]="imgTemp"  class="w90"/>
+        </div>
+
+      
+
+           <input  (change)="cambiarImagen($any($event).target.files[0])" type="file">
        </div>
     
        <br>
        
-    <button mat-raised-button color="primary" type="submit" class="botones"   >Cargar Foto</button>
+    <button mat-raised-button color="primary" type="submit" class="botones" [disabled]="!imagenSubir" (click)=" ActualizarFotoPerfilUsuario()"   >Cargar Foto</button>
     
     
     

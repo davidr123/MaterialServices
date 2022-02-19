@@ -40,6 +40,7 @@ h1.admin-app-name {
 
 mat-sidenav {
     width: 200px;
+    background-color: #494545;
 }
 
 .active-link {
@@ -58,6 +59,14 @@ mat-sidenav {
 .perfillogo{
     margin-left: 45px;
 }
+
+mat-sidenav-content {
+
+
+        margin-left: 40px;
+   
+}
+
 
 
 

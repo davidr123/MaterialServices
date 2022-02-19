@@ -14,4 +14,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-top-right-radius: 50% 50%;
     border-bottom-right-radius: 50% 50%;
     border-bottom-left-radius: 50% 50%;
+
+    text-align: center;
+}
+
+
+.w90{
+    width: 90px;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+
+    text-align: center;
 }

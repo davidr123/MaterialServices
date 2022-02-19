@@ -52,13 +52,6 @@ console.log(this.imgUrl);
       localStorage.removeItem('token');
     }
 
- ActualizarFotoPerfil(){
-   
- }
-
- ActualizarUsuario(){
-
- }
-
+ 
 
 }

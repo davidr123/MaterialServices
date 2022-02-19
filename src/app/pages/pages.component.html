@@ -4,9 +4,11 @@
     <mat-toolbar   color="primary" class="admin-toolbar mat-elevation-z5">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <h1  class="admin-app-name">SISTEMA DE MEDICOS Y HOSPITALES</h1>
+         
+        <span class="material-icons end iconlogout" (click)="Logout()">logout</span>
         <button mat-icon-button matSuffix  >
           
-            <span class="material-icons end iconlogout" (click)="Logout()">logout</span>
+            
         </button>
     </mat-toolbar>
 
@@ -20,7 +22,7 @@
 
                              <div  fxLayoutAlign="center center"  fxLayout="column">
                                
-                                    <img  class="w60" [src]="usuario.imagenUrl"/>
+                                    <img routerLink="/perfil"  class="w60" [src]="usuario.imagenUrl"/>
                                     <br>
                                     {{usuario.email}}
                                  
@@ -51,7 +53,7 @@
         </mat-sidenav>
 
         <mat-sidenav-content class="mat-elevation-z8">
-            <div class="content">
+            <div class="content main">
                
       
 <router-outlet></router-outlet>

@@ -4,22 +4,25 @@ import { AuthGuard } from '../guard/auth.guard';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PerfilComponent } from './mantenimientos/perfil/perfil.component';
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 
 import { PagesComponent } from './pages.component';
 
 const routes:Routes=[
 
     
-  {path:'dashboard', 
+  {path:'', 
    component:PagesComponent,
   canActivate:[AuthGuard],
   children: [
 
     
 
-    {path:'menu', component:PagesComponent},
+    //{path:'menu', component:PagesComponent},
     {path:'perfil', component:PerfilComponent},
-    {path:'', redirectTo:'/dashboard', pathMatch:'full'},
+    {path:'dashboard', component: DashboardComponent},
+    {path:'usuarios', component: UsuariosComponent}
+  
    
   
  
