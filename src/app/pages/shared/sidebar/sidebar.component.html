@@ -1,0 +1,40 @@
+<div class="navbar">
+    <div class="top">
+        <mat-icon  routerLink="perfil" routerLinkActive="active-link" class="pointer" [inline]='true'>edit</mat-icon>
+    </div>
+    <div class="user">
+        <img class="w90" [src]="usuario.imagenUrl" alt="">
+        <h4 class="name">{{usuario.nombre}}</h4>
+        <p class="mail">{{usuario.email}}</p>
+    </div>
+
+
+    
+    <div class="menu">
+        <div class="menu-head">
+            <span>dashboard</span>
+        </div>
+        <div class="menu-item">
+            <button mat-button class="menu-button" [routerLink]="['/dashboard']">
+                <mat-icon>dashboard</mat-icon>
+                <span>Home</span>
+            </button>
+            <button mat-button class="menu-button" [routerLink]="['/dashboard/usuarios']">
+                <mat-icon>account_circle</mat-icon>
+                <span>Usuarios</span>
+            </button>
+            <button mat-button class="menu-button">
+                <mat-icon>local_hospital</mat-icon>
+                <span>Medicos</span>
+            </button>
+            <button mat-button class="menu-button">
+                <mat-icon>domain</mat-icon>
+                <span>Hospitales</span>
+            </button>
+            <button mat-button class="menu-button">
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+            </button>
+        </div>
+    </div>
+</div>

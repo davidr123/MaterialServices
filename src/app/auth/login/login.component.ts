@@ -46,7 +46,7 @@ if(this.formLogin.get(campo)?.invalid){
     this.usuarioService.loginusuario(this.formLogin.value)
     .subscribe(resp=>{
       console.log(resp)
-      this.route.navigateByUrl('');
+      this.route.navigateByUrl('/dashboard');
       console.log('entro ')
     }, err=>{
       console.log(err);

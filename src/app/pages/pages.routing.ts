@@ -11,7 +11,7 @@ import { PagesComponent } from './pages.component';
 const routes:Routes=[
 
     
-  {path:'', 
+  {path:'dashboard', 
    component:PagesComponent,
   canActivate:[AuthGuard],
   children: [
@@ -20,7 +20,7 @@ const routes:Routes=[
 
     //{path:'menu', component:PagesComponent},
     {path:'perfil', component:PerfilComponent},
-    {path:'dashboard', component: DashboardComponent},
+    {path:'', component: DashboardComponent},
     {path:'usuarios', component: UsuariosComponent}
   
    

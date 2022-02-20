@@ -2,10 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { RegisterInterface } from '../interfaces/register.interface';
-import {catchError, map, tap} from 'rxjs/operators';
+import {catchError, delay, map, tap} from 'rxjs/operators';
 import { LoginInterface } from '../interfaces/login.interface';
 import { Observable, of } from 'rxjs';
 import { Usuario } from '../models/usuario.models';
+import { CargarUsuario } from '../interfaces/cargarusuario.interface';
 
 
 const base_url= environment.base_url;
@@ -109,6 +110,27 @@ data={
   
     const url=`${base_url}/usuarios/${this.uid}`;
      return this.http.put(url, data, this.headers);
+  }
+
+  cargarusuario(){
+
+    //http://localhost:3005/api/usuarios
+    const url = `${base_url}/usuarios`
+   return this.http.get<CargarUsuario>(url, this.headers).
+   pipe(
+     map(resp=>{  
+      const usuarios= resp.usuarios.map(
+        usu=> new Usuario(usu.nombre, usu.email, usu.img, usu.role, usu.uid)
+        );
+
+        return{
+          total: resp.total,
+          usuarios
+        }
+     })
+   
+     
+   )
   }
 
 

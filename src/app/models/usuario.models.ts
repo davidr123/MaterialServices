@@ -2,6 +2,9 @@ import { environment } from "src/environments/environment";
 const base_url= environment.base_url;
 
 export class Usuario{
+    map(arg0: (usu: any) => void) {
+      throw new Error('Method not implemented.');
+    }
 
     
 

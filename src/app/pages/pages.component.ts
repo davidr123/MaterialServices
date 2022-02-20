@@ -9,18 +9,18 @@ import { FileUploadService } from '../services/file-upload.service';
   selector: 'app-pages',
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.css'],
-  providers: [MediaMatcher]
+  //providers: [MediaMatcher]
 })
 export class PagesComponent implements OnInit {
 
   
 
-  mobileQuery: MediaQueryList ;
+  //mobileQuery: MediaQueryList ;
 public imgUrl= '';
 public usuario!: Usuario;
 
 
-  private _mobileQueryListener: (() => void) ;
+ // private _mobileQueryListener: (() => void) ;
 
  
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,
@@ -28,23 +28,25 @@ public usuario!: Usuario;
     private fileUploadServices: FileUploadService,
     ) { 
 
-      
+      // Hola, mi nombre es Freddy Rada espero que esta aplicacion te pueda servir para tus
+      //desarrollos aqui encontraras muchas cosas utiles como el consumo de servicios CRUD 
+      //Authgard, LazyLoads, Rutas Hijas, EventEmiter y muchas cosas mas.
 
 this.imgUrl= usuarioService.usuario.imagenUrl;
 this.usuario= usuarioService.usuario;
 
 console.log(this.imgUrl);
 
-      this.mobileQuery = media.matchMedia('(max-width: 600px)');
-      this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-      this.mobileQuery.addListener(this._mobileQueryListener);
+     // this.mobileQuery = media.matchMedia('(max-width: 600px)');
+      //this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+      //this.mobileQuery.addListener(this._mobileQueryListener);
     }
   ngOnInit(): void {
 
   }
 
     ngOnDestroy(): void {
-      this.mobileQuery.removeListener(this._mobileQueryListener);
+    //  this.mobileQuery.removeListener(this._mobileQueryListener);
     }
 
     Logout(){

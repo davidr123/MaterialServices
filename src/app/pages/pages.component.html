@@ -1,9 +1,9 @@
-
+<!--
 
 <div fxFlexFill class="admin-container" [class.admin-is-mobile]="mobileQuery.matches">
     <mat-toolbar   color="primary" class="admin-toolbar mat-elevation-z5">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-        <h1  class="admin-app-name">SISTEMA DE MEDICOS Y HOSPITALES</h1>
+        <h1 routerLink="" class="admin-app-name pointer">SISTEMA DE MEDICOS Y HOSPITALES</h1>
          
         <span class="material-icons end iconlogout" (click)="Logout()">logout</span>
         <button mat-icon-button matSuffix  >
@@ -13,7 +13,7 @@
     </mat-toolbar>
 
     <mat-sidenav-container class="admin-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav  class="mat-elevation-z8" #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [class.mat-elevation-z5]="!mobileQuery.matches">
+        <mat-sidenav mode="side" opened  class="mat-elevation-z8" #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [class.mat-elevation-z5]="!mobileQuery.matches">
             <mat-nav-list>
 
                 <br>
@@ -22,7 +22,7 @@
 
                              <div  fxLayoutAlign="center center"  fxLayout="column">
                                
-                                    <img routerLink="/perfil"  class="w60" [src]="usuario.imagenUrl"/>
+                                    <img routerLink="/perfil"  class="w60 pointer" [src]="usuario.imagenUrl"/>
                                     <br>
                                     {{usuario.email}}
                                  
@@ -37,7 +37,7 @@
 <br>
 
 
-                <a mat-list-item   >
+                <a mat-list-item routerLink="usuarios" routerLinkActive="active-link"  >
                     <mat-icon mat-list-icon>account_circle</mat-icon>
                     Usuarios
                 </a>
@@ -54,23 +54,50 @@
 
         <mat-sidenav-content class="mat-elevation-z8">
             <div class="content main">
-               
-      
+             
+     
 <router-outlet></router-outlet>
-   
 
+
+  
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
+-->
+   
+<mat-sidenav-container>
 
+    <mat-sidenav #sidebar mode="side" opened>
 
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
 
+    <mat-sidenav-content>
+        
+        <div class="content">
+            <div class="toolbar">
+                <mat-toolbar>
+                    <mat-icon class="pointer" (click)="sidebar.toggle()"  >menu</mat-icon>
 
+                    <div class="box">
+                        <mat-icon (click)="Logout()" class="pointer">arrow_forward</mat-icon>
+                    </div>
+                </mat-toolbar>
 
+            </div>
 
+            <div class="main">
+            
+          <router-outlet></router-outlet>
+            </div>
 
+        </div>
 
+    </mat-sidenav-content>
+
+    
+</mat-sidenav-container>
 
 
 
