@@ -1,6 +1,4 @@
-.main-div mat-card{
-    padding: 0px;
-}
+
 
 .login-form{
     padding: 20px;
@@ -35,4 +33,8 @@ mart-card{
     text-align: center;
 }
 
+
+mat-toolbar{
+    background: #ff8f00;
+}
 

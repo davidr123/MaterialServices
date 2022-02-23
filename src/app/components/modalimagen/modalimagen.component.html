@@ -1,0 +1,40 @@
+<div fxLayoutAlign="center center" fxLayout="row wrap" class="posicion">
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+
+        <mat-card fxFlex="100"    class="login-form posicion ">
+
+             <mat-card-header>
+                <mat-card-title>Perfil de Foto </mat-card-title>
+              </mat-card-header> 
+              <br>
+    
+       <div>
+
+        <div class="text-center">
+           <img *ngIf="!imgTemp" [src]="modalImgenService.img"  class="w90"/>
+            <img *ngIf="imgTemp" [src]="imgTemp"  class="w90"/>
+           
+        </div>
+
+      
+
+        <input  (change)="cambiarImagen($any($event).target.files[0])" type="file">
+       </div>
+    
+       <br>
+       <div class="botonera" >
+        <button mat-button class="colorboton colomodalletras " (click)="onNoClick()">Cancelar</button>
+        <button mat-button class="colorboton colomodalletras " (click)="ActualizarImagenUsuario()" [mat-dialog-close]  >Cargar</button>
+      </div>
+    
+    
+    
+      
+        </mat-card>
+    
+    
+    </div>
+    
+
+</div>
+

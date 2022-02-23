@@ -103,11 +103,7 @@ validartoken(): Observable<boolean>{
 
   actualizarUsuario(data:{nombre:string, email: string, role:string}){
     //http://localhost:3005/api/usuarios/61d23b1becb11e35555ad9db
-data={
-  ... data,
-  role:this.usuario.role || ''
-}
-  
+
     const url=`${base_url}/usuarios/${this.uid}`;
      return this.http.put(url, data, this.headers);
   }
@@ -118,6 +114,7 @@ data={
     const url = `${base_url}/usuarios`
    return this.http.get<CargarUsuario>(url, this.headers).
    pipe(
+     delay(100),
      map(resp=>{  
       const usuarios= resp.usuarios.map(
         usu=> new Usuario(usu.nombre, usu.email, usu.img, usu.role, usu.uid)
@@ -133,7 +130,19 @@ data={
    )
   }
 
+borrarusuario(usuario:Usuario){
+  //http://localhost:3005/api/hospitales/619be1de8c20c6087b78e813
+  const url=`${base_url}/usuarios/${usuario.uid}`;
+  return this.http.delete(url, this.headers);
 
+}
+
+
+guardarrole(usuario: Usuario){
+
+  const url=`${base_url}/usuarios/${usuario.uid}`;
+  return this.http.put(url, usuario, this.headers);
+}
 
 
 }

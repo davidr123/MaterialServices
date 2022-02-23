@@ -72,11 +72,6 @@ return data.nombreArchivo;
   return false;
 }
    
-     
-    
-  
-
-
   }
 
   

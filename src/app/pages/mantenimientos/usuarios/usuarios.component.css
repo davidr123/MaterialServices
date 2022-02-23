@@ -6,3 +6,30 @@ table {
     font-size: 14px;
     width: 100%;
   }
+
+  .icondelete{
+    color:#bf360c ;
+  }
+
+  .spiner{
+    display:inline;
+    zoom: 0.4
+  }
+
+  .tabla-item{
+    margin: 0 10px 0 10px;
+
+  
+
+ 
+}
+mat-sidenav{
+  background: #e65100;
+  width: 230px;
+  height: 100%;
+}
+mat-sidenav-content{
+  height: 100vh;
+
+
+}

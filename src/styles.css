@@ -28,3 +28,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
     text-align: center;
 }
+
+.colorboton{
+    background-color: #ff8f00;
+}
+
+.w100{
+    width: 100px;
+}
+
+
+.botonera {
+    display: flex;
+    justify-content: space-between;
+  
+    width: 60%;
+  }
+
+
+.main-div {
+    padding: 0px;
+    
+}
+
+.colomodalletras{
+    color: white;
+}
+
+
+
+
+

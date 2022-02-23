@@ -17,9 +17,10 @@ export class Usuario{
      ){}
   
     get imagenUrl(){
-      
-        //http://localhost:3005/api/upload/usuarios/6bb53f6d-22fc-4ef8-8149-1f29d60bd1bfa.jpg
-        if(this.img){
+
+        if(!this.img){
+            return `${base_url}/upload/usuarios/no-image`;
+        }else if(this.img){
        return `${base_url}/upload/usuarios/${this.img}`;
         }else{
             return `${base_url}/upload/usuarios/no-image`;

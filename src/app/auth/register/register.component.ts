@@ -61,12 +61,12 @@ return true;
   }
 
 
-  ContrsenasIguales(){
+  ContrsenasNoValidas(){
 
-    const pass1= this.FormRegister.get('password1')?.value;
+    const pass1= this.FormRegister.get('password')?.value;
     const pass2= this.FormRegister.get('password2')?.value;
 
-   if((pass1 !== pass2) && this.FormSubmit){
+   if((pass1 !== pass2) && this.FormSubmit ){
       return true;
     }else{
      return false;
