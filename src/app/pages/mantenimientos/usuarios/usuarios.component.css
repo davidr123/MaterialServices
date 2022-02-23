@@ -33,3 +33,63 @@ mat-sidenav-content{
 
 
 }
+.card-02 {
+  position: relative;
+  flex: 1;
+  max-width: 1132px;
+  height: 350px;
+  margin: 10px;
+  border-radius: 5px;
+ 
+}
+
+.card-03 {
+  position: relative;
+  flex: 1;
+  margin: 10px;
+  max-width: 1130px;
+ }
+
+
+ /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.mat-paginator-sticky {
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+}
+
+
+.card-02 > ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+@media (max-width: 800px) {
+ 
+
+  .card-02 {
+    flex: 100%;
+    max-width: 600px;
+  }
+
+  .card-03 {
+    flex: 100%;
+    max-width: 600px;
+  }
+
+
+}
