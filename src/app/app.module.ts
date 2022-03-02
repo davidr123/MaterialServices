@@ -24,12 +24,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalimagenComponent } from './components/modalimagen/modalimagen.component';
 import {MatDialogModule} from '@angular/material/dialog';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     ModalimagenComponent,
+  
    
    
     
@@ -54,7 +57,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormsModule,
     ReactiveFormsModule,
     
-    MatDialogModule
+    MatDialogModule,
+    
     
     
     

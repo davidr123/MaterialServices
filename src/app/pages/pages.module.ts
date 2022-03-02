@@ -26,6 +26,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { ImagenModule } from '../pipes/imagen.module';
+import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
+import { MedicoComponent } from './mantenimientos/medicos/medico/medico.component';
 
 
 @NgModule({
@@ -36,6 +40,9 @@ import {MatDialogModule} from '@angular/material/dialog';
      UsuariosComponent,
      PerfilComponent,
      SidebarComponent,
+     HospitalesComponent,
+     MedicosComponent,
+     MedicoComponent,
    
     
  
@@ -64,7 +71,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    ImagenModule
 
     
     

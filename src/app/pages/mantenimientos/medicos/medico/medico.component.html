@@ -1,0 +1,115 @@
+<div class="container">
+<div class="row">
+    <div fxLayoutAlign="center center" class="col-md-6">
+   <div fxLayoutAlign="center center" fxLayout="row wrap" class="posicion">
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+
+        <mat-card fxFlex="75" class="mat-elevation-z4"  class="login-form">
+            <mat-card-header>
+                <mat-card-title>Nuevo Medico</mat-card-title>
+              </mat-card-header>
+    
+          <form 
+          fxLayout="column" 
+          fxLayoutAlign="stretch"
+          [formGroup]="medicoForm"
+          (submit)="CrearMedico()"
+          >
+              <div class="form-group row" *ngIf="medicoseleccionado">
+          <img class="w90 pointer" (click)="openDialog(medicoseleccionado)" [src]="medicoseleccionado.img | imagen:'medicos'"/>
+        </div>
+
+            
+             
+                <input matInput  
+                type="text" 
+                
+                placeholder="Nombre"
+                formControlName="nombre"
+            
+               >
+               <mat-icon matSuffix>account_circle</mat-icon>
+    
+    
+         
+             
+               <select class="form-control"
+               formControlName="hospitales">
+
+                   <option value="">Sellecione un Hospital</option>
+                   <option *ngFor="let hospitales of hospitales"
+                   [value]="hospitales._id">
+                      {{hospitales.nombre}}
+                    </option>
+               
+
+                   
+
+               </select>
+               
+            
+          
+               <button mat-raised-button color="primary" [disabled]="medicoForm.invalid" type="submit"  >Guardar Cambios</button>
+    
+        </form>
+    
+       
+ 
+    
+    
+    
+      
+        </mat-card>
+    
+    
+    </div>
+    
+
+  </div>
+
+</div>
+
+
+
+<div fxLayoutAlign="center center" class="col-md-6" *ngIf="hospitalseleccionado" >
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div" >
+
+        <mat-card fxFlex="100" class="mat-elevation-z8"  class="login-form " >
+
+             <mat-card-header>
+                <mat-card-title>Hospital Asignado</mat-card-title>
+                <mat-card-title>{{hospitalseleccionado.nombre}}</mat-card-title>
+              </mat-card-header> 
+              <br>
+    
+       <div>
+
+        <div class="text-center">
+          <!-- <img *ngIf="!imgTemp" [src]="usuario.imagenUrl"  class="w90"/>
+            <img *ngIf="imgTemp" [src]="imgTemp"  class="w90"/>
+            -->
+        </div>
+
+        <img [src]="hospitalseleccionado.img! | imagen:'hospitales'" 
+        class="w100 img-thumbnail" />
+
+       </div>
+    
+       <br>
+       
+    <button mat-raised-button color="primary" type="submit" class="botones"   >Cargar Foto</button>
+    
+    
+    
+      
+        </mat-card>
+    
+    
+    </div>
+    
+
+</div>
+
+</div>
+
+</div>

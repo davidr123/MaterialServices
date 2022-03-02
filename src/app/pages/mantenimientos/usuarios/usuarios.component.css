@@ -1,6 +1,13 @@
 table {
     width: 100%;
   }
+
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   
   .mat-form-field {
     font-size: 14px;
@@ -91,5 +98,11 @@ mat-sidenav-content{
     max-width: 600px;
   }
 
+
+}
+@media only screen and (max-width: 736px) and (orientation:portrait) {
+  mat-header-row, mat-row {
+   width: 200%;  
+  }
 
 }
