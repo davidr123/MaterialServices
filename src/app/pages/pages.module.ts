@@ -30,6 +30,8 @@ import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.comp
 import { ImagenModule } from '../pipes/imagen.module';
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico/medico.component';
+import { HospitalComponent } from './mantenimientos/hospitales/hospital/hospital.component';
+import { BuscarComponent } from './buscar/buscar.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { MedicoComponent } from './mantenimientos/medicos/medico/medico.componen
      HospitalesComponent,
      MedicosComponent,
      MedicoComponent,
+     HospitalComponent,
+     BuscarComponent,
    
     
  

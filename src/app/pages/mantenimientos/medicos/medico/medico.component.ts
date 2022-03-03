@@ -65,6 +65,7 @@ this.medicoForm.get('hospitales')?.valueChanges
   console.log(hospitalID)
 
   this.hospitalseleccionado= this.hospitales.find(h=> h._id=== hospitalID)
+  console.log(this.hospitalseleccionado)
   
   
 }

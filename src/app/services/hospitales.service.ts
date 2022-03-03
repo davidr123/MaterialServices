@@ -65,9 +65,24 @@ export class HospitalesService {
 
   }
 
-  actualizarHospitales(_id:string, nombre:string){
-    const url= `${base_url}/hospitales/${_id}`;
-    return this.http.put(url, { nombre }, this.headers );
+  actualizarHospitales(hospital:Hospital, nombre:string){
+    const url= `${base_url}/hospitales/${hospital._id}`;
+    return this.http.put(url,  {nombre} , this.headers );
+
+
+  }
+
+
+  
+  mostrarhospitalesbyid(id:string){
+    //http://localhost:3005/api/hospitales
+
+    const url=`${base_url}/hospitales/${id}`;
+
+    return this.http.get<any>(url, this.headers).
+    pipe(
+      map((resp:{ok:boolean, hospitalDB:Hospital })=>resp.hospitalDB)
+    )
 
 
   }

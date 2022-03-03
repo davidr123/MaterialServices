@@ -80,8 +80,27 @@
                 <mat-toolbar>
                     <mat-icon class="pointer" (click)="sidebar.toggle()"  >menu</mat-icon>
 
+                    <form class="example-form">
+                        <mat-form-field class="example-full-width" >
+                            <mat-icon class="pointer">
+                                search</mat-icon>
+                         
+                          <input style="color: white;" 
+                          type="text" matInput 
+                           placeholder=""
+                           (keyup)="BuscarTodo(txtBusqueda.value)"
+                           #txtBusqueda/>
+                        
+                        </mat-form-field>
+                      </form>
+                      
+
                     <div class="box">
-                        <mat-icon (click)="Logout()" class="pointer">arrow_forward</mat-icon>
+                        
+                        <mat-icon (click)="Logout()" class="pointer">
+                           
+                            arrow_forward</mat-icon>
+                        
                     </div>
                 </mat-toolbar>
 

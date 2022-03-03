@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -30,6 +31,8 @@ export class HospitalesComponent implements OnInit {
 
   public subs!:Subscription;
 
+  
+
 
   dataSource= new MatTableDataSource(this.ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -45,6 +48,8 @@ this.subs=  this.modalServices.cambioImagen.pipe(
   console.log(resp)
   this.MostrarHospitales();
 })
+
+
 
 
   }
@@ -125,7 +130,7 @@ subscribe(resp=> {
 
 })
   }
-
+/*
   ActualizarHospital(hospital:Hospital){
 
     this.hospitalServives.actualizarHospitales(hospital._id, hospital.nombre)
@@ -136,7 +141,7 @@ subscribe(resp=> {
 
   }
 
-
+*/
 
 
 }
