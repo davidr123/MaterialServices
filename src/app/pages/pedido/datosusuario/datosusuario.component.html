@@ -1,0 +1,80 @@
+<div class="card-body">
+    <form (submit)="CrearUsuarioPedido()"
+    [formGroup]="FormDatosUsuarioPedido">
+        <div class="form-body">
+            <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">INFORMACION DE USUARIO</font></font></h3>
+            <hr>
+            <div class="row p-t-20">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Primer nombre</font></font></label>
+                        <input type="text" id="firstName" class="form-control" placeholder="Nombre" formControlName="nombre">
+                    </div>
+                  </div>
+                <!--/span-->
+                <div class="col-md-6">
+                    <div class="form-group has-danger">
+                        <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apellido</font></font></label>
+                        <input type="text" id="lastName" class="form-control form-control-danger" placeholder="Apellido" formControlName="apellido">
+                    </div>
+                </div>
+                <!--/span-->
+            </div>
+            <!--/row-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Numero de identificacion</font></font></label>
+                        <input type="text" class="form-control" placeholder="CI" formControlName="identificacion">
+                    </div>
+                </div>
+                <!--/span-->
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email</font></font></label>
+                        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                    </div>
+                    
+                </div>
+                <!--/span-->
+            </div>
+            <!--/row-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group has-success">
+                        <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Género</font></font></label>
+                        <input type="text" class="form-control" placeholder="Genero" formControlName="genero">
+
+                     </div>
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Direccion</font></font></label>
+                        <input type="text" class="form-control" placeholder="Direccion" formControlName="direccion">
+                    </div>
+                    
+                </div>
+           
+                <!--/span-->
+            </div>
+            <!--/row-->
+       
+            <!--/row-->
+
+            
+         
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success btncolor"> 
+                <i class="fa fa-check"></i><font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Guardar</font></font></button>
+        </div>
+    </form>
+</div>
+     
+      
+

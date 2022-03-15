@@ -124,6 +124,7 @@ data: this.modalServices.abririmagen('hospitales', hospital._id, hospital.nombre
   BorrarHospital(hospital:Hospital){
 this.hospitalServives.borrarhospital(hospital._id).
 subscribe(resp=> {
+  console.log(resp);
   Swal.fire('Borrar', `Esta seguro de eliminar a ${hospital.nombre}`, 'success');
  this.MostrarHospitales();
 

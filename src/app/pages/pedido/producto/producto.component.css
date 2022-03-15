@@ -1,0 +1,54 @@
+table {
+    width: 100%;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+
+  .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.color-bordered-table.warning-bordered-table thead th {
+  background-color: #ffb22b;
+  color: #ffffff;
+}
+
+
+.table thead th, .table th {
+  border: 0px;
+}
+
+.table thead th, .table th {
+  font-weight: 500;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.container{
+  padding-top: 40px;
+}
+
+.color_lupa{
+  padding-left: 280px;;
+}
+
+.colortable{
+  background-color:#d84315; 
+}

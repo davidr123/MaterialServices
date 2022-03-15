@@ -90,6 +90,10 @@ this.imgsubs= this.modalImagenService.cambioImagen.pipe(
     return  Swal.fire('Error', 'No se puede eliminar a usted mismo', 'warning')
     }
 
+    if(usuario.role==='USER_ROLE'){
+      return  Swal.fire('Error', 'Usted no es un usuario privilegiado', 'warning')
+    }
+
     Swal.fire({
       title: 'Borrar Usuario?',
       text: `Estas seguro de borrar a ${usuario.nombre} !`,

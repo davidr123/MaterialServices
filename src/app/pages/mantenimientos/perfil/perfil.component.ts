@@ -37,6 +37,7 @@ this.usaurioServices.actualizarUsuario(this.formPerfil.value)
   const{nombre, email}= this.formPerfil.value
  this.usuario.nombre= nombre;
  this.usuario.email= email;
+ console.log(nombre)
  console.log(resp);
 
  Swal.fire('Guardado', 'Los cambios fueron actualizados con éxito', 'success');

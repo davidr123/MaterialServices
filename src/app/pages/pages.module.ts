@@ -32,6 +32,13 @@ import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico/medico.component';
 import { HospitalComponent } from './mantenimientos/hospitales/hospital/hospital.component';
 import { BuscarComponent } from './buscar/buscar.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { PedidoComponent } from './pedido/pedido.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { DatosusuarioComponent } from './pedido/datosusuario/datosusuario.component';
+import { ProductoComponent } from './pedido/producto/producto.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ConfirmacionComponent } from './pedido/confirmacion/confirmacion.component';
 
 
 @NgModule({
@@ -47,6 +54,10 @@ import { BuscarComponent } from './buscar/buscar.component';
      MedicoComponent,
      HospitalComponent,
      BuscarComponent,
+     PedidoComponent,
+     DatosusuarioComponent,
+     ProductoComponent,
+     ConfirmacionComponent,
    
     
  
@@ -76,7 +87,12 @@ import { BuscarComponent } from './buscar/buscar.component';
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatDialogModule,
-    ImagenModule
+    ImagenModule,
+    MatTabsModule,
+    MatButtonToggleModule,
+    MatAutocompleteModule,
+   
+   
 
     
     
