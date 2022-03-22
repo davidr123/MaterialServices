@@ -74,21 +74,22 @@
    </div>
 <br>
 <br>
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxFlex fxFlex.lt-md="0" >
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" 
+    fxFlex fxFlex.lt-md="0" *ngIf="arrayProducto.length!==0">
       <!-- Columna # 1 -->
       <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 calc(33% - 20px)"  >
 
     
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <span>Sub total:</span>
-          <span>{{subtotal}}</span>
+          <span>{{totalprecio}}</span>
         </div>
 
         <mat-divider class="divider-horizontal"></mat-divider>
 
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <span>Iva:</span>
-          <span>{{iva}}</span>
+          <span>{{totalprecio*0.12}}</span>
         
         </div>
 
@@ -102,7 +103,7 @@
 
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <span>Total:</span>
-          <span>{{total}}</span>
+          <span>{{totalprecio +(totalprecio*0.12)}}</span>
         </div>
       </div>
       <!-- Columna # 2 -->

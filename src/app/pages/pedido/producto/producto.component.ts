@@ -115,49 +115,7 @@ BorrarProducto_New( item:string ) {
  
 
 
-/*
-  this.arrayProducto.forEach((value, index, arra)=>{
-  this.arrayProducto.length
-     console.log(index)
-     console.log(value)
 
-   let valor=  this.arrayProducto.values
-
-   let articculo={};
-
-   
-     
-   // delete this.arrayProducto[index];
-//let ind= this.arrayProducto.indexOf(this.productoSeleccionado!)
-//console.log('numero prod',ind)
-if(index ===  valor.length){
-  this.Nueca_Data= this.arrayProducto.splice(index,1)
-  console.log("asf",this.Nueca_Data, this.arrayProducto)
-  this.productoServices.cambioArray.emit(this.arrayProducto);
-  this.dataSource= new MatTableDataSource(this.arrayProducto);
-  Swal.fire('Borrado', 'Producto Borrado', 'success');
-}
-  
-
-   
-    });
-    
-
-    
-
-    
-   
-    
-   
-
- let count= index;
-    //  this.Nueca_Data= this.arrayProducto.splice(index, this.arrayProducto!)
-      console.log("asf",this.Nueca_Data, this.arrayProducto)
-      this.productoServices.cambioArray.emit(this.arrayProducto);
-      this.dataSource= new MatTableDataSource(this.arrayProducto);
-      Swal.fire('Borrado', 'Producto Borrado', 'success');
-
-*/
 
 }
 

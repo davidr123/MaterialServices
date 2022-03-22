@@ -28,13 +28,13 @@ export class ConfirmacionComponent implements OnInit {
 public productoSeleccionado:Producto|undefined;
  public subtotal :number=0;
 public iva:number=0;
- public total!:number;
+ public totalprecio!:number;
  public productoSeleccionadoConf:Producto|undefined;
 
 
  arr:Producto[]=[]
   ngOnInit(): void {
-    this.DatosCompra();
+   
 
     this.formProducto=this.fb.group({
       productos:['', Validators.required]
@@ -57,30 +57,14 @@ public iva:number=0;
       this.arrayProducto= resp
       this.dataSource= new MatTableDataSource(this.arrayProducto);
 
+   this.totalprecio= this.arrayProducto.reduce((total, item)=>{
+               return total +  item.precio;
+     }, 0)
 
-      this.arrayProducto.forEach((value,index, arr)=> {
-        console.log(index);
 
-    
-     this.subtotal= this.subtotal + this.arrayProducto[index].precio
-     console.log(this.subtotal);
-     this.iva= this.iva + (this.arrayProducto[index].precio * 0.12)
+      });
+
      
-           this.total= this.subtotal + this.iva;
-
-      })
-
-   
-
-
-
-
- 
-//this.total=  this.subtotal +this.iva;
-       
-      
-    })
-
 
     this.productosServices.cambioArray
     .pipe(
@@ -138,20 +122,13 @@ public iva:number=0;
     }
 
 
-    DatosCompra(){
+    BorrarFactura(){
+      if(this.arrayProducto.length===0){
 
-this.subtotal!= this.productoSeleccionado?.precio;
-
-this.total!= this.productoSeleccionado?.precio;
-
-
-
-
-
-
-
-
+        this.totalprecio=0;
+        
+      }
     }
-  
+
 
 }
