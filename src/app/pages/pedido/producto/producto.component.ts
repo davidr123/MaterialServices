@@ -112,20 +112,18 @@ BorrarProducto_New( item:string ) {
    
    }
   
- 
-
-
-
-
 }
 
 
 AñadirProducto(){
+  console.log('aqui quiero ver',this.productos)
   this.formProducto.get('productos')?.valueChanges
   .subscribe(productoID=>{
-    console.log(productoID)
+    
+    console.log('id prod',productoID)
     this.productoSeleccionado= this.productos.find(p=> p._id ===  productoID);
-    console.log(this.productoSeleccionado)
+    console.log('aqui ver',this.productoSeleccionado)
+    
     if(productoID=== this.productoSeleccionado?._id){
       this.arrayProducto.push(this.productoSeleccionado!)
        this.dataSource= new MatTableDataSource(this.arrayProducto);

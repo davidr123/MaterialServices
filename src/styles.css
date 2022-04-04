@@ -69,3 +69,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       border-bottom-left-radius: 50% 50%;
   }
 
+
+
+
+  .tablesive{
+    width: 100%;
+    overflow-x: auto;
+  }
