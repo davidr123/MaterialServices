@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
-import { delay } from 'rxjs/operators';
+import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { delay, filter, map } from 'rxjs/operators';
 import { ModalimagenComponent } from 'src/app/components/modalimagen/modalimagen.component';
 
 import { Hospital } from 'src/app/models/hospital.models';
@@ -18,7 +19,7 @@ import Swal from 'sweetalert2';
   templateUrl: './medico.component.html',
   styleUrls: ['./medico.component.css']
 })
-export class MedicoComponent implements OnInit {
+export class MedicoComponent implements OnInit, OnDestroy {
 
   public medicoForm!: FormGroup;
 
@@ -27,10 +28,19 @@ export class MedicoComponent implements OnInit {
   public hospitalseleccionado: Hospital | undefined   ;
   public medicoseleccionado: Medico | undefined  ;
 
+
   constructor(private fb:FormBuilder, private hospitalServices: HospitalesService
     , private medicoServices: MedicoService,
     private activateRoute: ActivatedRoute, private route: Router, public dialog: MatDialog,
-    private modalServices:ModalimagenService) { }
+    private modalServices:ModalimagenService) {
+   
+     }
+  ngOnDestroy(): void {
+
+  }
+
+
+
 
 
 

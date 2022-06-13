@@ -39,6 +39,7 @@ import { DatosusuarioComponent } from './pedido/datosusuario/datosusuario.compon
 import { ProductoComponent } from './pedido/producto/producto.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ConfirmacionComponent } from './pedido/confirmacion/confirmacion.component';
+import { BreadcrumbsComponent } from './mantenimientos/breadcrumbs/breadcrumbs.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { ConfirmacionComponent } from './pedido/confirmacion/confirmacion.compon
      DatosusuarioComponent,
      ProductoComponent,
      ConfirmacionComponent,
+     BreadcrumbsComponent
    
     
  
@@ -65,6 +67,7 @@ import { ConfirmacionComponent } from './pedido/confirmacion/confirmacion.compon
 
   exports:[
     DashboardComponent,
+    BreadcrumbsComponent
   ],
 
 

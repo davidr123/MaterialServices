@@ -16,6 +16,7 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
 import { DatosusuarioComponent } from './pedido/datosusuario/datosusuario.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { RouterModule, Routes } from '@angular/router';
+import { BreadcrumbsComponent } from './mantenimientos/breadcrumbs/breadcrumbs.component';
 
 const routesChildren: Routes=[
   
@@ -23,11 +24,12 @@ const routesChildren: Routes=[
     {path:'perfil', component:PerfilComponent},
     {path:'', component: DashboardComponent},
     {path:'usuarios', component: UsuariosComponent},
-    {path:'hospitales', component: HospitalesComponent},
-    {path:'hospital/:id', component: HospitalComponent},
-    {path:'medicos', component: MedicosComponent},
-    {path:'medico/:id', component: MedicoComponent},
+    {path:'hospitales', component: HospitalesComponent, data:{title:'Hospitales'}},
+    {path:'hospital/:id', component: HospitalComponent , data:{title:'Editar Hospital'}},
+    {path:'medicos', component: MedicosComponent, data:{title:'Medicos'}},
+    {path:'medico/:id', component: MedicoComponent, data:{title:'Editar Medicos'}},
     {path:'buscar/:termino', component: BuscarComponent},
+    {path:'breads', component: BreadcrumbsComponent},
 
     //PEDIDO
     {path:'pedido', component: PedidoComponent},

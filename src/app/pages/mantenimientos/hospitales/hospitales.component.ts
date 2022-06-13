@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ActivationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { delay, filter, map } from 'rxjs/operators';
 import { ModalimagenComponent } from 'src/app/components/modalimagen/modalimagen.component';
 import { Hospital } from 'src/app/models/hospital.models';
 import { HospitalesService } from 'src/app/services/hospitales.service';
@@ -17,7 +18,7 @@ import Swal from 'sweetalert2';
   templateUrl: './hospitales.component.html',
   styleUrls: ['./hospitales.component.css']
 })
-export class HospitalesComponent implements OnInit {
+export class HospitalesComponent implements OnInit, OnDestroy {
 
   public cargando: boolean = true;
 
@@ -31,14 +32,32 @@ export class HospitalesComponent implements OnInit {
 
   public subs!:Subscription;
 
+
+
   
 
 
   dataSource= new MatTableDataSource(this.ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
   constructor(public dialog: MatDialog, private hospitalServives:HospitalesService
-    , private modalServices:ModalimagenService) { }
+    , private modalServices:ModalimagenService, private route: Router) { 
+
+     
+  
+    }
+
+
+
+  ngOnDestroy(): void {
+
+    
+    
+  }
+
+
+
 
   ngOnInit(): void {
 this.MostrarHospitales();

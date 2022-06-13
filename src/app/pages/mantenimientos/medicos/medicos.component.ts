@@ -3,8 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ActivationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { delay, filter, map } from 'rxjs/operators';
 import { ModalimagenComponent } from 'src/app/components/modalimagen/modalimagen.component';
 import { Hospital } from 'src/app/models/hospital.models';
 import { Medico } from 'src/app/models/medico.models';
@@ -27,14 +28,20 @@ export class MedicosComponent implements OnInit, OnDestroy {
   public medicos: Medico[]=[];
   public imgsubs!: Subscription;
 
+
   dataSource= new MatTableDataSource(this.ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor(public dialog: MatDialog, private medicoServices:MedicoService
-    , private modalServices:ModalimagenService) { }
+    , private modalServices:ModalimagenService, private route: Router) { 
+
+     
+    }
   ngOnDestroy(): void {
     this.imgsubs.unsubscribe();
+    
   }
+
 
   ngOnInit(): void {
     this.CargarMedicos();

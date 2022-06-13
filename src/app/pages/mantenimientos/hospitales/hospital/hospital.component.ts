@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Hospital } from 'src/app/models/hospital.models';
 import { Usuario } from 'src/app/models/usuario.models';
 import { HospitalesService } from 'src/app/services/hospitales.service';
@@ -12,7 +14,7 @@ import Swal from 'sweetalert2';
   templateUrl: './hospital.component.html',
   styleUrls: ['./hospital.component.css']
 })
-export class HospitalComponent implements OnInit {
+export class HospitalComponent implements OnInit, OnDestroy {
 
 public usuarios: Usuario[]=[]
 
@@ -20,9 +22,19 @@ public usuarioSeleccionado: Usuario | undefined;
 
 public hospitalSeleccionado!: Hospital ;
 
+
   public FormHospital!:FormGroup;
   constructor(private fb:FormBuilder, private usuarioServices:UsuarioService, private hospitalServices:HospitalesService,
-    private activatedRoute: ActivatedRoute, private route:Router) { }
+    private activatedRoute: ActivatedRoute, private route:Router) {
+
+   
+     }
+  ngOnDestroy(): void {
+ 
+  }
+
+
+ 
 
   ngOnInit(): void {
 
